@@ -279,6 +279,9 @@ document.getElementById("main").addEventListener("submit",async e=>{
   }catch(err){btn.disabled=false;btn.textContent="Riprova";alert("Commento non salvato: "+err.message);}
 });
 
+// aprire il link segreto su una pagina gia aperta cambia solo l'hash: ricarichiamo
+window.addEventListener("hashchange",()=>location.reload());
+
 (async()=>{
   if(!K){document.getElementById("stato").textContent="";
     document.getElementById("main").innerHTML=`<div class="errore">Apri la pagina dal link segreto.</div>`;return;}
